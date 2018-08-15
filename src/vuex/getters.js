@@ -1,0 +1,1 @@
+export const getPlayer = (state, playerID) => state.players.filter(player => player.id === playerID)
