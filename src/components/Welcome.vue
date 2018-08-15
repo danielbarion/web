@@ -1,13 +1,16 @@
 <template>
   <v-container fluid class="main-container">
     <v-layout>
-      <nav class="navbar">
+      <nav class="navbar navbar-fixed">
         <ul>
           <!-- <li><i class="material-icons">home</i></li> -->
           <li><img src="../assets/shield.svg" alt="Shield"></li>
-          <li><a href="javascript:;">SKILLS</a></li>
-          <li><a href="javascript:;">PROJECTS</a></li>
-          <li><a href="javascript:;">CONTACT</a></li>
+          <!-- <li><a href="javascript:;">ABOUT</a></li> -->
+          <!-- <li><a href="javascript:;">SKILLS</a></li> -->
+          <!-- <li><a href="javascript:;">PROJECTS</a></li> -->
+          <!-- <li><a href="javascript:;">CONTACT</a></li> -->
+          <li><a href="javascript:;">LOREM</a></li>
+          <li><a href="javascript:;">IPSUM</a></li>
         </ul>
       </nav>
       <header class="header">
@@ -25,6 +28,17 @@
         </div>
       </header>
     </v-layout>
+    <v-layout class="v-skills">
+      <h1>Skills</h1>
+      <section class="skills">
+        <div class="skills-left">
+          <v-progress-linear v-model="valueDeterminate"></v-progress-linear>
+        </div>
+        <div class="skills-right">
+           <v-progress-linear v-model="valueDeterminate"></v-progress-linear>
+        </div>
+      </section>
+    </v-layout>
   </v-container>
 </template>
 
@@ -36,7 +50,7 @@ export default {
     msg: String
   },
   data: () => ({
-
+    valueDeterminate: 50
   }),
   methods: {}
 }
@@ -56,6 +70,15 @@ export default {
   background-position: 0;
   padding: 0;
 }
+/* .header::before {
+  content: '';
+  background: url('../assets/bg-cover.png');
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+} */
 .welcome-msg {
   display: flex;
   color: aliceblue;
@@ -135,5 +158,15 @@ export default {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+
+
+/** skills **/
+.v-skills {
+  background-color: aliceblue;
+}
+.skills {
+  display: flex;
 }
 </style>
