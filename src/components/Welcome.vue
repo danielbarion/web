@@ -29,7 +29,8 @@
       </header>
     </v-layout>
     <v-layout class="v-skills">
-      <h1>Skills</h1>
+      <!-- <h1>&rsaquo; Skills</h1> -->
+      <h1>&rsaquo; Lorem</h1>
       <section class="skills">
         <div class="skills-left">
           <v-progress-linear v-model="valueDeterminate"></v-progress-linear>
@@ -164,9 +165,16 @@ export default {
 
 /** skills **/
 .v-skills {
-  background-color: aliceblue;
+  padding: 5rem;
+}
+.v-skills h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 32px;
 }
 .skills {
   display: flex;
+}
+.skills-left {
+  min-width: 300px;
 }
 </style>
