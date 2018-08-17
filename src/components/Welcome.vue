@@ -154,7 +154,6 @@ export default {
                 0px 8px 13px rgba(0,0,0,0.1),
                 0px 18px 23px rgba(0,0,0,0.1)
 
-
 .navbar
   position absolute
   color aliceblue
@@ -169,31 +168,31 @@ export default {
     right 5rem
     top 1rem
 
-.navbar li
-  padding 0.5rem
+    & li
+      padding 0.5rem
 
-.navbar li i
-  font-size 32px
+    & li i
+      font-size 32px
 
-.navbar li img
-  height 32px
-  width 32px
+    & li img
+      height 32px
+      width 32px
 
-.navbar li a
-  text-decoration none
-  color aliceblue
-  text-shadow 0px 4px 3px rgba(0,0,0,0.4)
-  -o-transition .5s
-  -ms-transition .5s
-  -moz-transition .5s
-  -webkit-transition .5s
-  transition .5s all
+    & li a
+      text-decoration none
+      color aliceblue
+      text-shadow 0px 4px 3px rgba(0,0,0,0.4)
+      -o-transition .5s
+      -ms-transition .5s
+      -moz-transition .5s
+      -webkit-transition .5s
+      transition .5s all
 
-.navbar li a:hover
-  background-image linear-gradient(141deg, red 0%, white 50%, #2cb5e8 75%)
-  background-clip text
-  -webkit-background-clip text
-  color transparent
+    & li a:hover
+      background-image linear-gradient(141deg, red 0%, white 50%, #2cb5e8 75%)
+      background-clip text
+      -webkit-background-clip text
+      color transparent
 
 /** skills **/
 .v-skills
@@ -201,32 +200,32 @@ export default {
   display flex
   flex-direction column
 
-.v-skills h1
-  font-family 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-  font-size 32px
+  & h1
+    font-family 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-size 32px
 
 .skills
   display flex
 
-.skills ul
-  list-style none
-  padding 1rem
+  & ul
+    list-style none
+    padding 1rem
 
 .skills-left
   display flex
   flex 1
 
-.skills-left .block-left
-  flex 1
+  & .block-left
+    flex 1
 
-.skills-left .block-right
-  flex 1
+  & .block-right
+    flex 1
 
 .skills-right
   flex 1
 
-.skills-right ul
-  display flex
+  ul
+    display flex
 
 .v-progress-circular
   margin 1rem
