@@ -372,7 +372,6 @@ export default {
 
 .v-gallery
   display flex
-  padding-bottom 3rem
 
   section
     display flex
@@ -388,6 +387,7 @@ export default {
       flex-wrap wrap
       justify-content center
       list-style none
+      padding-bottom 3rem
 
       li
         padding 1rem
@@ -419,19 +419,16 @@ export default {
 
 .v-footer
   display flex
-  background:
-  radial-gradient(black 15%, transparent 16%) 0 0,
-  radial-gradient(black 15%, transparent 16%) 4px 4px,
-  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 4px 5px;
-  background-color:#282828;
-  background-size:8px 8px;
+  background-color #575757
+  background-image url("../assets/bg-cover.png")
+  background-repeat repeat
   color aliceblue
-  padding 1.75rem
+  padding 2rem
   font-family 'Ubuntu', sans-serif
   text-shadow 0px 4px 3px rgba(0,0,0,0.4),
             0px 8px 13px rgba(0,0,0,0.1),
             0px 18px 23px rgba(0,0,0,0.1)
+  box-shadow: 0 0px 9px 1px rgba(0,0,0,0.5)
 
   section
     flex 1
