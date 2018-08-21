@@ -145,6 +145,14 @@
         </div>
       </section>
     </v-layout>
+    <v-layout class="v-about">
+      <section>
+        <h1>&rsaquo; Lorem</h1>
+        <p v-for="item in loremIpsum">
+          {{ item }}
+        </p>
+      </section>
+    </v-layout>
     <v-layout class="v-gallery">
       <section>
         <h1>&rsaquo; Lorem</h1>
@@ -209,6 +217,13 @@ export default {
       { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
       { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
       { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
+    ],
+    loremIpsum: [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porta suscipit consectetur. Vivamus in mollis sem, id suscipit nibh. In at tellus cursus, tincidunt velit ac, fermentum purus. Nam eget consequat libero. Etiam consectetur egestas pharetra. Quisque venenatis sodales nunc eget volutpat. Nam malesuada ultrices neque sodales cursus. In iaculis tristique libero ac semper.',
+      'Maecenas semper vestibulum orci nec laoreet. Vivamus fringilla rutrum elit, vitae vulputate lectus maximus quis. Cras in odio quis erat porta mollis. Vivamus id massa eu nibh malesuada scelerisque. Donec venenatis turpis vitae nulla sodales tempor vitae quis urna. Morbi maximus nibh non nibh elementum aliquam. Aliquam erat volutpat. Nulla id varius massa, id blandit risus. Nulla facilisi. Ut faucibus nisi enim, in gravida mi laoreet et.',
+      'In hac habitasse platea dictumst. Sed sodales felis at ex aliquam, ac rhoncus odio dapibus. Aliquam id felis vestibulum, blandit nunc efficitur, placerat quam. Donec tempus porttitor mauris, eu maximus magna facilisis eu. Nunc ullamcorper in eros vitae mollis. Vivamus feugiat turpis non aliquet interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      'Nulla feugiat neque eget ipsum vehicula, eu placerat elit eleifend. Cras dignissim odio ut suscipit scelerisque. Nullam sed hendrerit odio. Cras venenatis egestas fringilla. Etiam pretium mi ac hendrerit dapibus. Aliquam et vestibulum urna. Sed pretium eros vel ex ornare, et dictum ipsum accumsan. Quisque facilisis sagittis ex consectetur posuere. Ut ultrices enim magna, sit amet bibendum neque gravida eget. Phasellus sollicitudin dui sed nulla maximus lacinia. Nam metus ante, vulputate id sem nec, molestie commodo mauris. Donec ac odio eget elit egestas posuere non eu lectus. Fusce ac massa quis nisl maximus efficitur ut in felis. Aliquam maximus risus neque.',
+      'Curabitur ornare felis sit amet finibus eleifend. Nullam iaculis, nisl sit amet aliquam fermentum, justo nisi volutpat elit, ut cursus neque lectus sed neque. Nullam finibus vitae felis at aliquam. Nunc a venenatis justo. Duis consectetur lorem ut nisl dignissim, placerat condimentum libero faucibus. Nullam turpis risus, vulputate ut pretium sit amet, faucibus quis arcu. Etiam suscipit ante sit amet lacinia sodales. Curabitur luctus vitae nisi at ullamcorper.'
     ]
   }),
   methods: {},
@@ -324,7 +339,10 @@ export default {
 
 /** skills **/
 .v-skills
-  padding 5rem
+  padding-left 5rem
+  padding-right 5rem
+  padding-bottom 3rem
+  padding-top 3rem
   display flex
   flex-direction column
 
@@ -370,7 +388,24 @@ export default {
 .blue-cap-bg
   background #2cb5e8
 
+.v-about
+  padding-left 5rem
+  padding-right 5rem
+  padding-bottom 3rem
+  padding-top 3rem
+  color aliceblue
+  background-color #575757
+  background-image url("../assets/bg-cover.png")
+  background-repeat repeat
+  color aliceblue
+
+  & h1
+    font-family 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-size 32px
+    padding-bottom 1rem
+
 .v-gallery
+  padding-top 3rem
   display flex
 
   section
@@ -387,7 +422,7 @@ export default {
       flex-wrap wrap
       justify-content center
       list-style none
-      padding-bottom 3rem
+      padding-bottom 5rem
 
       li
         padding 1rem
