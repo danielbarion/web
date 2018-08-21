@@ -146,15 +146,18 @@
     </v-layout>
     <v-layout class="v-gallery">
       <section>
-        <ul>
-          <li v-for="item in gallery">
-            <div class="gallery-item">
-              <header>{{ item.header }}</header>
-              <img :src="item.src" :alt="item.alt">
-              <span>{{ item.about }}</span>
-            </div>
-          </li>
-        </ul>
+        <h1>&rsaquo; Lorem</h1>
+        <div>
+          <ul>
+            <li v-for="item in gallery">
+              <div class="gallery-item">
+                <header>{{ item.header }}</header>
+                <img :src="item.src" :alt="item.alt">
+                <span>{{ item.about }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
     </v-layout>
   </v-container>
@@ -359,16 +362,24 @@ export default {
 
 .v-gallery
   display flex
-  background-color gray
 
   section
+    display flex
+    flex-direction column
+
+    & h1
+      padding-left 5rem
+      font-family 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      font-size 32px
+
     ul
       display flex
       flex-wrap wrap
+      justify-content center
       list-style none
 
       li
-        padding 1.5rem
+        padding 1rem
 
         &:hover span, &:hover header
           opacity 1
