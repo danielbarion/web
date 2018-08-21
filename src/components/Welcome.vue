@@ -11,6 +11,7 @@
           <!-- <li><a href="javascript:;">CONTACT</a></li> -->
           <li><a href="javascript:;">LOREM</a></li>
           <li><a href="javascript:;">IPSUM</a></li>
+          <li><a href="javascript:;">DOLOR</a></li>
         </ul>
       </nav>
       <header class="header">
