@@ -257,12 +257,13 @@ export default {
   padding 0
 
 .header
-  height 800px
+  height 100vh
   width 100vw
   background-image url('../assets/shield.jpg')
   background-size cover
   background-position 0
   padding 0
+  box-shadow inset 0px 0px 20px 1px #000
 
 .welcome-msg
   display flex
@@ -389,6 +390,7 @@ export default {
   background #2cb5e8
 
 .v-about
+  font-family 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
   padding-left 5rem
   padding-right 5rem
   padding-bottom 3rem
@@ -398,6 +400,7 @@ export default {
   background-image url("../assets/bg-cover.png")
   background-repeat repeat
   color aliceblue
+  box-shadow inset 0 0 20px 1px #000
 
   & h1
     font-family 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
