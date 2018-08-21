@@ -35,17 +35,17 @@
         <div class="skills-left">
           <div class="block-left">
             <ul>
-              <li>
-                <span>Lorem</span>
-                <v-progress-linear v-model="valueDeterminate" color="lighten-1 blue"></v-progress-linear>
+              <li v-for="skill in skillsLeft">
+                <span>{{ skill.label }}</span>
+                <v-progress-linear v-model="skill.value" color="lighten-1 blue"></v-progress-linear>
               </li>
             </ul>
           </div>
           <div class="block-right">
             <ul>
-              <li>
-                <span>Lorem</span>
-                <v-progress-linear v-model="valueDeterminate" color="red"></v-progress-linear>
+              <li v-for="skill in skillsRight">
+                <span>{{ skill.label }}</span>
+                <v-progress-linear v-model="skill.value" color="red"></v-progress-linear>
               </li>
             </ul>
           </div>
@@ -91,7 +91,21 @@ export default {
   data: () => ({
     valueDeterminate: 50,
     interval: {},
-    value: 0
+    value: 0,
+    skillsLeft: [
+      { label: 'Lorem', value: (Math.random() * 100) },
+      { label: 'Ipsum', value: (Math.random() * 100) },
+      { label: 'Dolor', value: (Math.random() * 100) },
+      { label: 'Sit', value: (Math.random() * 100) },
+      { label: 'Amet', value: (Math.random() * 100) },
+    ],
+    skillsRight: [
+      { label: 'Lorem', value: (Math.random() * 100) },
+      { label: 'Ipsum', value: (Math.random() * 100) },
+      { label: 'Dolor', value: (Math.random() * 100) },
+      { label: 'Sit', value: (Math.random() * 100) },
+      { label: 'Amet', value: (Math.random() * 100) },
+    ]
   }),
   methods: {},
   beforeDestroy () {
