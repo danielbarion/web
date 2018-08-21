@@ -161,6 +161,13 @@
         </div>
       </section>
     </v-layout>
+    <v-layout class="v-footer">
+      <section>
+        <div>Daniel Barion</div>
+        <div>Made with Love <i class="fa fa-heart"></i></div>
+        <div>BlueHeart Studio <i class="fa fa-heart"></i></div>
+      </section>
+    </v-layout>
   </v-container>
 </template>
 
@@ -214,7 +221,9 @@ export default {
         return (this.value = 0)
       }
 
-      this.value += this.getRandomValue(1, 10)
+      const newValue = this.value + this.getRandomValue(1, 10)
+
+      this.value = newValue > 100 ? 100 : newValue
 
     }, 1000)
     this.getRandomValue = (min, max) => {
@@ -363,6 +372,7 @@ export default {
 
 .v-gallery
   display flex
+  padding-bottom 3rem
 
   section
     display flex
@@ -406,5 +416,29 @@ export default {
         bottom 0
         padding 1rem
         transition opacity 0.5s
+
+.v-footer
+  display flex
+  background:
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 4px 4px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 4px 5px;
+  background-color:#282828;
+  background-size:8px 8px;
+  color aliceblue
+  padding 1.75rem
+  font-family 'Ubuntu', sans-serif
+  text-shadow 0px 4px 3px rgba(0,0,0,0.4),
+            0px 8px 13px rgba(0,0,0,0.1),
+            0px 18px 23px rgba(0,0,0,0.1)
+
+  section
+    flex 1
+    display flex
+    justify-content space-between
+
+    i
+      color #2cb5e8
 
 </style>
