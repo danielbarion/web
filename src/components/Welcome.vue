@@ -74,8 +74,87 @@
                 {{ value }} Lorem
               </v-progress-circular>
             </li>
+            <li>
+              <v-progress-circular
+                :rotate="-90"
+                :size="160"
+                :width="20"
+                :value="value"
+                class="blue-cap"
+              >
+                {{ value }} Lorem
+              </v-progress-circular>
+            </li>
+            <li>
+              <v-progress-circular
+                :rotate="-90"
+                :size="160"
+                :width="20"
+                :value="value"
+                color="red"
+              >
+                {{ value }} Lorem
+              </v-progress-circular>
+            </li>
+            <li>
+              <v-progress-circular
+                :rotate="-90"
+                :size="160"
+                :width="20"
+                :value="value"
+                class="blue-cap"
+              >
+                {{ value }} Lorem
+              </v-progress-circular>
+            </li>
+            <li>
+              <v-progress-circular
+                :rotate="-90"
+                :size="160"
+                :width="20"
+                :value="value"
+                color="red"
+              >
+                {{ value }} Lorem
+              </v-progress-circular>
+            </li>
+            <li>
+              <v-progress-circular
+                :rotate="-90"
+                :size="160"
+                :width="20"
+                :value="value"
+                class="blue-cap"
+              >
+                {{ value }} Lorem
+              </v-progress-circular>
+            </li>
+            <li>
+              <v-progress-circular
+                :rotate="-90"
+                :size="160"
+                :width="20"
+                :value="value"
+                color="red"
+              >
+                {{ value }} Lorem
+              </v-progress-circular>
+            </li>
           </ul>
         </div>
+      </section>
+    </v-layout>
+    <v-layout class="v-gallery">
+      <section>
+        <ul>
+          <li v-for="item in gallery">
+            <div class="gallery-item">
+              <header>{{ item.header }}</header>
+              <img :src="item.src" :alt="item.alt">
+              <span>{{ item.about }}</span>
+            </div>
+          </li>
+        </ul>
       </section>
     </v-layout>
   </v-container>
@@ -98,6 +177,8 @@ export default {
       { label: 'Dolor', value: (Math.random() * 100) },
       { label: 'Sit', value: (Math.random() * 100) },
       { label: 'Amet', value: (Math.random() * 100) },
+      { label: 'Lorem', value: (Math.random() * 100) },
+      { label: 'Ipsum', value: (Math.random() * 100) },
     ],
     skillsRight: [
       { label: 'Lorem', value: (Math.random() * 100) },
@@ -105,6 +186,18 @@ export default {
       { label: 'Dolor', value: (Math.random() * 100) },
       { label: 'Sit', value: (Math.random() * 100) },
       { label: 'Amet', value: (Math.random() * 100) },
+      { label: 'Lorem', value: (Math.random() * 100) },
+      { label: 'Ipsum', value: (Math.random() * 100) },
+    ],
+    gallery: [
+      { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
+      { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
+      { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
+      { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
+      { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
+      { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
+      { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
+      { header: 'Lorem Ipsum', src: require('../assets/header.jpg'), alt: 'Lorem Ipsum', about: 'Lorem Ipsum Dolor Sit Amet'},
     ]
   }),
   methods: {},
@@ -113,11 +206,19 @@ export default {
   },
   mounted () {
     this.interval = setInterval(() => {
-      if (this.value === 100) {
+      if (this.value >= 100) {
         return (this.value = 0)
       }
-      this.value += 10
+
+      this.value += this.getRandomValue(1, 10)
+
     }, 1000)
+    this.getRandomValue = (min, max) => {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+
+      return Math.floor(Math.random() * (max - min + 1)) + min
+    }
   }
 }
 </script>
@@ -239,7 +340,13 @@ export default {
   flex 1
 
   ul
+    list-style none
     display flex
+    flex-wrap wrap
+
+    li
+      padding 1rem
+
 
 .v-progress-circular
   margin 1rem
@@ -249,5 +356,43 @@ export default {
 
 .blue-cap-bg
   background #2cb5e8
+
+.v-gallery
+  display flex
+  background-color gray
+
+  section
+    ul
+      display flex
+      flex-wrap wrap
+      list-style none
+
+      li
+        padding 1.5rem
+
+        &:hover span, &:hover header
+          opacity 1
+
+    .gallery-item
+      display flex
+      flex-direction column
+      color white
+      position relative
+
+      header
+        opacity 0
+        position absolute
+        padding 1rem
+        transition opacity 0.5s
+
+      img
+        max-width 30rem
+
+      span
+        opacity 0
+        position absolute
+        bottom 0
+        padding 1rem
+        transition opacity 0.5s
 
 </style>
