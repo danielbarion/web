@@ -3,7 +3,7 @@ require('./check-versions')()
 
 // This file config are for deploy to github pages
 
-process.env.NODE_ENV = 'production'
+process.env.NODE_ENV = 'ghpages'
 
 const ora = require('ora')
 const rm = require('rimraf')
@@ -16,7 +16,7 @@ const webpackConfig = require('./webpack.gh.conf')
 const spinner = ora('building for production [github pages]...')
 spinner.start()
 
-rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
+rm(path.join(config.ghPages.assetsRoot, config.ghPages.assetsSubDirectory), err => {
   if (err) throw err
   webpack(webpackConfig, (err, stats) => {
     spinner.stop()

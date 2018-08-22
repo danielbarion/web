@@ -11,31 +11,21 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-// @Overwrite index config paths
-
-// Template for index.html
-config.build.index = path.resolve(__dirname, '../docs/index.html'),
-
-// Paths
-config.build.assetsRoot = path.resolve(__dirname, '../docs'),
-config.build.assetsSubDirectory = 'web/static',
-config.build.assetsPublicPath = '/'
-
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
-  : require('../config/prod.env')
+  : require('../config/ghpages.env')
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
-      sourceMap: config.build.productionSourceMap,
+      sourceMap: config.ghPages.productionSourceMap,
       extract: true,
       usePostCSS: true
     })
   },
-  devtool: config.build.productionSourceMap ? config.build.devtool : false,
+  devtool: config.ghPages.productionSourceMap ? config.ghPages.devtool : false,
   output: {
-    path: config.build.assetsRoot,
+    path: config.ghPages.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
@@ -50,7 +40,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           warnings: false
         }
       },
-      sourceMap: config.build.productionSourceMap,
+      sourceMap: config.ghPages.productionSourceMap,
       parallel: true
     }),
     // extract css into its own file
@@ -65,7 +55,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
-      cssProcessorOptions: config.build.productionSourceMap
+      cssProcessorOptions: config.ghPages.productionSourceMap
         ? { safe: true, map: { inline: false } }
         : { safe: true }
     }),
@@ -75,7 +65,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
-        : config.build.index,
+        : config.ghPages.index,
       template: 'index.html',
       inject: true,
       minify: {
@@ -126,14 +116,14 @@ const webpackConfig = merge(baseWebpackConfig, {
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
+        to: config.ghPages.assetsSubDirectory,
         ignore: ['.*']
       }
     ])
   ]
 })
 
-if (config.build.productionGzip) {
+if (config.ghPages.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
   webpackConfig.plugins.push(
@@ -142,7 +132,7 @@ if (config.build.productionGzip) {
       algorithm: 'gzip',
       test: new RegExp(
         '\\.(' +
-        config.build.productionGzipExtensions.join('|') +
+        config.ghPages.productionGzipExtensions.join('|') +
         ')$'
       ),
       threshold: 10240,
@@ -151,7 +141,7 @@ if (config.build.productionGzip) {
   )
 }
 
-if (config.build.bundleAnalyzerReport) {
+if (config.ghPages.bundleAnalyzerReport) {
   const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
