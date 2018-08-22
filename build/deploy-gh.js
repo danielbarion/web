@@ -13,7 +13,7 @@ const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.gh.conf')
 
-const spinner = ora('building for production [github pages]...')
+const spinner = ora('building for github pages...')
 spinner.start()
 
 rm(path.join(config.ghPages.assetsRoot, config.ghPages.assetsSubDirectory), err => {

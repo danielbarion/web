@@ -151,6 +151,10 @@
         <p v-for="item in loremIpsum">
           {{ item }}
         </p>
+        <h1>&rsaquo; Lorem</h1>
+        <p v-for="item in loremIpsum">
+          {{ item }}
+        </p>
       </section>
     </v-layout>
     <v-layout class="v-gallery">
