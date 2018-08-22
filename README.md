@@ -1,4 +1,4 @@
-# game
+# web
 
 > A Vue.js project
 
