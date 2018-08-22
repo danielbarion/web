@@ -13,8 +13,15 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 // @Overwrite index config paths
 
+// Template for index.html
+config.build.index = path.resolve(__dirname, '../docs/index.html'),
+
+// Paths
+config.build.assetsRoot = path.resolve(__dirname, '../docs'),
 config.build.assetsPublicPath = '/web/'
-config.build. assetsRoot = path.resolve(__dirname, '../docs')
+config.build.assetsRoot = path.resolve(__dirname, '../docs')
+
+console.log(config)
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
