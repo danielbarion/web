@@ -18,10 +18,8 @@ config.build.index = path.resolve(__dirname, '../docs/index.html'),
 
 // Paths
 config.build.assetsRoot = path.resolve(__dirname, '../docs'),
-config.build.assetsPublicPath = '/web/'
-config.build.assetsRoot = path.resolve(__dirname, '../docs')
-
-console.log(config)
+config.build.assetsSubDirectory = 'web/static',
+config.build.assetsPublicPath = '/'
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
